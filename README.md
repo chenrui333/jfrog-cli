@@ -36,7 +36,7 @@ JFrog CLI is written in the [Go programming language](https://golang.org/), so t
 ## Install Go
 
 To download and install `Go`, please refer to the [Go documentation](https://golang.org/doc/install).
-Please download `Go 1.11` or above.
+Please download `Go 1.13` or above.
 
 ## Download and Build the CLI
 
@@ -61,7 +61,7 @@ Once completed, you will find the JFrog CLI executable at your current directory
 
 ### Artifactory tests
 #### General tests
-To run Artifactory tests execute the following command: 
+To run Artifactory tests execute the following command:
 ````
 go test -v github.com/jfrog/jfrog-cli-go
 ````
@@ -80,7 +80,7 @@ Optional flags:
 
 * Running the tests will create two repositories: `jfrog-cli-tests-repo` and `jfrog-cli-tests-repo1`.<br/>
   Once the tests are completed, the content of these repositories will be deleted.
-  
+
 #### Maven, Gradle and Npm tests
 * The *M2_HOME* environment variable should be set to the local maven installation path.
 * The *gradle* and *npm* executables should be included as part of the *PATH* environment variable.
@@ -112,11 +112,11 @@ go test -v github.com/jfrog/jfrog-cli-go -test.artifactory=false -test.docker=tr
 #### Go commands tests
 
 To run go tests:
-* Use Go version 1.11 and above.
+* Use Go version 1.13 and above.
 * Run the following command:
 
 ````
-go test -v github.com/jfrog/jfrog-cli-go -test.artifactory=false -test.go=true 
+go test -v github.com/jfrog/jfrog-cli-go -test.artifactory=false -test.go=true
 ````
 
 #### NuGet tests
@@ -127,13 +127,13 @@ To run NuGet tests:
 * Run the following command:
 
 ````
-go test -v github.com/jfrog/jfrog-cli-go -test.artifactory=false -test.nuget=true 
+go test -v github.com/jfrog/jfrog-cli-go -test.artifactory=false -test.nuget=true
 ````
 
 ### Bintray tests
 Bintray tests credentials are taken from the CLI configuration. If non configured or not passed as flags, the tests will fail.
 
-To run Bintray tests execute the following command: 
+To run Bintray tests execute the following command:
 ````
 go test -v github.com/jfrog/jfrog-cli-go -test.artifactory=false -test.bintray=true
 ````

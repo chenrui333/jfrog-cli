@@ -13,7 +13,7 @@ node {
     repo = 'jfrog-cli-go'
     sh 'rm -rf temp'
     sh 'mkdir temp'
-    def goRoot = tool 'go-1.12'
+    def goRoot = tool 'go-1.13'
     env.GOROOT="$goRoot"
     env.PATH+=":${goRoot}/bin"
     env.GO111MODULE="on"
@@ -110,12 +110,12 @@ def publishNpmPackage(jfrogCliRepoDir) {
     dir(jfrogCliRepoDir+'npm/') {
         sh '''#!/bin/bash
             echo "Downloading npm..."
-            wget https://nodejs.org/dist/v8.11.1/node-v8.11.1-linux-x64.tar.xz
-            tar -xvf node-v8.11.1-linux-x64.tar.xz
-            export PATH=$PATH:$PWD/node-v8.11.1-linux-x64/bin/
+            wget https://nodejs.org/dist/v8.16.1/node-v8.16.1-linux-x64.tar.xz
+            tar -xvf node-v8.16.1-linux-x64.tar.xz
+            export PATH=$PATH:$PWD/node-v8.16.1-linux-x64/bin/
             echo "//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" > .npmrc
             echo "registry=https://registry.npmjs.org" >> .npmrc
-            ./node-v8.11.1-linux-x64/bin/npm publish
+            ./node-v8.16.1-linux-x64/bin/npm publish
         '''
     }
 }
